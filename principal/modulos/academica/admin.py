@@ -4,7 +4,7 @@ from .models import estudiante
 from .models import curso
 from .models import matricula
 
-# Register your models here.
+# Register your models here.fsddf
 admin.site.Register(carrera)
 admin.site.Register(estudiante)
 admin.site.Register(curso)
