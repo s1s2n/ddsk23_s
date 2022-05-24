@@ -15,7 +15,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from principal.views import CategoriaActualizar, CategoriaCrear, CategoriaDetalle, CategoriaEliminar, ListadoCategoria, formularioContacto,contactar
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('formulario/',formularioContacto ), 
+    path('contactar/',contactar ), 
+    path('categoria/', ListadoCategoria.as_view(template_name = "categoria/index.html"), name='leer'),
+ 
+    # La ruta 'detalles' en donde mostraremos una página con los detalles de un Categoria o registro 
+    path('categoria/detalle/<int:pk>', CategoriaDetalle.as_view(template_name = "categoria/detalle.html"), name='detalles'),
+ 
+    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Categoria o registro  
+    path('categoria/crear', CategoriaCrear.as_view(template_name = "categoria/crear.html"), name='crear'),
+ 
+    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un categoriao registro de la Base de Datos 
+    path('categoria/editar/<int:pk>', CategoriaActualizar.as_view(template_name = "categoria/actualizar.html"), name='actualizar'), 
+ 
+    # La ruta 'eliminar' que usaremos para eliminar un Categoria o registro de la Base de Datos 
+    path('categoria/eliminar/<int:pk>', CategoriaEliminar.as_view(), name='categoria/eliminar.html'),    
+]
+
 ]
