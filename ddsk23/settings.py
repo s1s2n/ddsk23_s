@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'principal.apps.PrincipalConfig'
-    'bootstrap4'
+    'principal.apps.PrincipalConfig',
+    'bootstrap4',
     'widget_tweaks',
 ]
 
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'ddsk23.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

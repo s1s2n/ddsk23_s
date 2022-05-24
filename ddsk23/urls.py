@@ -15,26 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from principal.views import CategoriaActualizar, CategoriaCrear, CategoriaDetalle, CategoriaEliminar, ListadoCategoria, formularioContacto,contactar
+from principal.views import ListadoBarrios, BarriosActualizar, BarriosCrear, BarriosDetalle, BarriosEliminar
+#formularioContacto,contactar
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('formulario/',formularioContacto ), 
-    path('contactar/',contactar ), 
-    path('categoria/', ListadoCategoria.as_view(template_name = "categoria/index.html"), name='leer'),
+   # path('formulario/',formularioContacto ), 
+   # path('contactar/',contactar ), 
+    path('barrios/', ListadoBarrios.as_view(template_name = "barrios/index.html"), name='leer'),
  
     # La ruta 'detalles' en donde mostraremos una página con los detalles de un Categoria o registro 
-    path('categoria/detalle/<int:pk>', CategoriaDetalle.as_view(template_name = "categoria/detalle.html"), name='detalles'),
+    path('barrios/detalle/<int:pk>', BarriosDetalle.as_view(template_name = "barrios/detalle.html"), name='detalles'),
  
     # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Categoria o registro  
-    path('categoria/crear', CategoriaCrear.as_view(template_name = "categoria/crear.html"), name='crear'),
+    path('barrios/crear', BarriosCrear.as_view(template_name = "barrios/crear.html"), name='crear'),
  
     # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un categoriao registro de la Base de Datos 
-    path('categoria/editar/<int:pk>', CategoriaActualizar.as_view(template_name = "categoria/actualizar.html"), name='actualizar'), 
+    path('barrios/editar/<int:pk>', BarriosActualizar.as_view(template_name = "barrios/actualizar.html"), name='actualizar'), 
  
     # La ruta 'eliminar' que usaremos para eliminar un Categoria o registro de la Base de Datos 
-    path('categoria/eliminar/<int:pk>', CategoriaEliminar.as_view(), name='categoria/eliminar.html'),    
+    path('barrios/eliminar/<int:pk>', BarriosEliminar.as_view(), name='barrios/eliminar.html'),    
 ]
 
-]
+

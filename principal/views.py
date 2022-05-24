@@ -17,37 +17,37 @@ from django.contrib.messages.views import SuccessMessageMixin
 # Habilitamos los formularios en Django
 from django import forms
 
-class ListadoCategoria(ListView):
-    model = Categoria
+class ListadoBarrios(ListView):
+    model = Barrios
 
-class CategoriaCrear(SuccessMessageMixin, CreateView):
-    model =Categoria
-    form = Categoria
+class BarriosCrear(SuccessMessageMixin, CreateView):
+    model =Barrios
+    form = Barrios
     fields = "__all__"
-    success_message ='Categoria creada correctamente'
+    success_message ='Barrios creada correctamente'
      
     def get_success_url(self):        
         return reverse('leer') # Redireccionamos a la vista principal 'leer'
 
-class CategoriaDetalle (DetailView):
-    model =Categoria
+class BarriosDetalle (DetailView):
+    model =Barrios
 
-class  CategoriaActualizar(SuccessMessageMixin,UpdateView):
-    model =  Categoria
-    form = Categoria
+class  BarriosActualizar(SuccessMessageMixin,UpdateView):
+    model =  Barrios
+    form = Barrios
     fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
-    success_message = 'Categoria Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+    success_message = 'Barrios Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
 
     def get_success_url(self):               
         return reverse('leer') # Redireccionamos a la vista principal 'leer'
-class CategoriaEliminar(SuccessMessageMixin, DeleteView): 
-    model = Categoria 
-    form = Categoria
+class BarriosEliminar(SuccessMessageMixin, DeleteView): 
+    model = Barrios
+    form = Barrios
     fields = "__all__"     
  
     # Redireccionamos a la página principal luego de eliminar un registro o postre
     def get_success_url(self): 
-        success_message = 'Categoria Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+        success_message = 'Barrios Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
         messages.success (self.request, (success_message))       
         return reverse('leer') # Redireccionamos a la vista principal 'leer'
  

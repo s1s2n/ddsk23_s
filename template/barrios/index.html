@@ -34,29 +34,29 @@
 	    <table class="table table-striped table-hover">
 	        <thead>
 	          <tr>
-	            <th width="35%">Codigo  de categoria</th>
+	            <th width="35%">Codigo  de barrio</th>
 	            <th>Nombre</th>
-	            <th>Descripción</th>
+	            <th>Municipio</th>
 	            
 	          </tr>
 	        </thead>
 	        <tbody>
 	        
 	        <!-- Recorremos los objetos o registros que tenemos en nuestra tabla 'categoria' y los listamos -->
-	        {% for categoria in object_list %}
+	        {% for barrio in object_list %}
 	          <tr>
-	            <td>{{ categoria.idcategorias }}</td>
-	            <td>{{ categoria.nombre }}</td>
-	            <td>{{ categoria.descripcion }}</td>
+	            <td>{{ barrio.idcategorias }}</td>
+	            <td>{{ barrio.nombre }}</td>
+	            <td>{{ barrio.descripcion }}</td>
 	            <td>
 	             <!-- Usaremos un formulario que realizará la tarea de eliminar un registro o postre desde la misma tabla HTML -->  
-                 <form method="POST" action="eliminar/{{categoria.idcategorias}}">
+                 <form method="POST" action="eliminar/{{barrio idbarrio}}">
                     	            {% csrf_token %}
                     	            <div class="btn-group">
                     	   
                     	              <!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
-                    	              <a href="detalle/{{categoria.idcategorias}}" title="Ver" type="button" class="btn btn-success">Ver </a>
-                    	              <a href="editar/{{categoria.idcategorias}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+                    	              <a href="detalle/{{barrio.idbarrio}}" title="Ver" type="button" class="btn btn-success">Ver </a>
+                    	              <a href="editar/{{barrio.idbarrio}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
                     	              <button class="btn btn-danger" onclick="return eliminar();" type="submit">
                     	                Eliminar
                     	              </button>
