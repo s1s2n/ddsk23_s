@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Actividades
 from .models import Area
 from .models import Asignatura
@@ -16,7 +17,6 @@ from .models import EstadoDocumento
 from .models import EstadoMatricula 
 from .models import Grado
 from .models import Horario
-from .models import IngresarInfoMatricula 
 from .models import Logros
 from .models import Matricula
 from .models import Municipio
@@ -48,7 +48,6 @@ admin.site.register(EstadoDocumento)
 admin.site.register(EstadoMatricula)
 admin.site.register(Grado)
 admin.site.register(Horario)
-admin.site.register(IngresarInfoMatricula)
 admin.site.register(Logros)
 admin.site.register(Matricula)
 admin.site.register(Municipio)
@@ -62,7 +61,6 @@ admin.site.register(TipoDocumento)
 admin.site.register(TipoNotificacion)
 admin.site.register(TipoPersona)
 admin.site.register(Veredas)
-
 
 
 # Register your models here.
